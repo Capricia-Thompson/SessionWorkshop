@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Main Page";
+}
+
+
+<div>
+    <div class="d-flex justify-content-between w-100 p-2 border border-bottom border-black">
+        <h3>Welcome @Context.Session.GetString("Name")!</h3>
+        <a asp-action="logout" asp-controller="Home"><button class="btn btn-danger">Logout</button></a>
+    </div>
+    <div class="w-25 mx-auto text-center">
+        <h1>@Context.Session.GetInt32("Num")</h1>
+    </div>
+    <div class="d-flex flex-wrap w-75 mx-auto justify-content-between p-2">
+        <a asp-action="plus1" asp-controller="Home" class="w-50 p-2"><button class="w-100 text-center btn btn-warning">+
+                1</button></a>
+        <a asp-action="minus1" asp-controller="Home" class="w-50 p-2"><button
+                class="w-100 text-center btn btn-primary">-
+                1</button></a>
+        <a asp-action="times2" asp-controller="Home" class="w-50 p-2"><button class="w-100 text-center btn btn-danger">x
+                2
+            </button></a>
+        <a asp-action="plusrandom" asp-controller="Home" class="w-50 p-2"><button
+                class="w-100 text-center btn btn-success">+
+                Random</button></a>
+    </div>
+</div>
